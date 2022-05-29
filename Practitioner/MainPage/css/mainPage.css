@@ -252,7 +252,7 @@ abbr{
         cursor: pointer;
     }
     footer{
-        position: absolute;
+        position: relative;
         bottom: 0;
             height: 100px;
             width: 100%;
