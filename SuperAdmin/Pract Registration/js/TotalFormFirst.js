@@ -1,3 +1,7 @@
+// import axios from "axios";
+
+// const axios=require('axios')
+
 const handleSubmit = async (e) => {
     e.preventDefault();
     const picture = window.localStorage.getItem("Picture");
@@ -29,8 +33,8 @@ const handleSubmit = async (e) => {
     const password = window.localStorage.getItem("Password");
 
     const data = {
-        "username": "newzzz",
-        "email": "newzzz@mail.ru",
+        "username": "nzsdsddssffzz",
+        "email": "zasdzz@msdail.ru",
         "password": 1234,
         "first_name": "firstName",
         "last_name": "lastName",
@@ -43,7 +47,7 @@ const handleSubmit = async (e) => {
             "postal_code": "postalCode"
         },
         "organization": {
-            "name": "organizationNamenameZZZ",
+            "name": "organizationNdfgamensdfasdfmenew",
             "type": "organizationType",
             "telecom": "organizationTelecom"
         },
@@ -71,55 +75,20 @@ const handleSubmit = async (e) => {
     // username: username,
     // password: password,
 
-    // const response = await fetch("http://localhost:8080/api/users/super-admin", {
-    //     // method: 'POST',
-    //     mode: 'no-cors',
-    //     // headers: {
-    //     //     "Content-Type": "application/json",
-    //     //     'Accept': 'application/json',
-    //     //     cache: 'no-cache'
-    //     // },
-    //     method: 'POST',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // });
-
-    //     fetch("http://localhost:8080/api/users/super-admin", {
-    //         method: 'POST',
-    //         mode: 'no-cors',
-    //         cache: 'no-cache',
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    // }).then(response=>console.log(response)).catch(err=>console.log(err))
-
-
-    // let config = {
-    //     headers: {
-    //         // 'Content-Type': 'application/json',
-    //         'Accept': 'application/json',
-    //         "Access-Control-Allow-Origin": "*",
-    //     }
-    // }
-    // const response = await axios.post("http://localhost:8080/api/users/super-admin",
-    //     data,
-    //     config)
-    // console.log("Response: ", response);
-
-    axios({
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', "Access-Control-Allow-Origin": "*" },
-        url: 'http://localhost:8080/api/users/super-admin',
-        data
-    }).then(function (response) {
-        console.log(response);
-    });
+    // HINT: you can use above initialized data to create superadmins,
+    // but also changing the endpoint to /api/users/practitioner to create a practitioner,
+    // for other endpoints and data ask Abgar, please keep header configrations in each request you make
+    const response = await fetch("http://localhost:8080/api/users/super-admin", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                cache: 'no-cache',
+            },
+    })
+    const result = await response.json()
+    console.log(result)
 };
 const finalForm = document.querySelector("#final-form");
 finalForm.addEventListener("submit", handleSubmit);
