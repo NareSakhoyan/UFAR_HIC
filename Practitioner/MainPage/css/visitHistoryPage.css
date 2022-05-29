@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e7f5fc7a;
+  overflow-x: hidden;
+}
+.logo {
+  margin: 0 0 0 20px;
+  width: 50px;
+  height: 50px;
+}
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo-container p {
+  display: inline;
+  font-family: Quicksand Regular, arial;
+  color: #0c90d0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.row1 {
+  background-color: #abdbf1;
+  height: 80px;
+}
+.row1 > .col-8 {
+  max-height: 100%;
+}
+
+.account-container {
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.accountFullName {
+  font-family: DM sans;
+  color: #0c90d0;
+  font-size: medium;
+}
+
+.accountPhotoName {
+  margin-right: 20px;
+}
+
+.accountPhoto{
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.dropdown-toggle {
+  height: 45px;
+}
+
+.visitList {
+  font-family: Quicksand Regular, arial;
+  font-size: 35px;
+  color: #0c90d0;
+}
+
+.card {
+  background-color: #abdbf1 !important;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 550px;
+  width: 20rem;
+  border-radius: 40px !important;
+}
+.card img {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 320px;
+  width: 275px;
+}
+
+.history p{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #0c90d0;
+  font-family: "Quicksand Regular", arial;
+}
+
+.card p {
+  font-size: 14px;
+  color: #066285;
+  font-family: "Quicksand Regular", arial;
+}
+
+.row2 {
+  background-image: url(/photos/background.jpeg);
+  background-size: cover;
+  height: 36em;
+}

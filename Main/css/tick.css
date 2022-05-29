@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", serif;
+}
+
+#image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -200px;
+}
+#image img{
+    height: 200px;
+    width: 200px;
+}
+.nextbutton button{
+    position: absolute;
+    float: right;
+    background-image: linear-gradient(to right, #11A9C6FF,#11A9C6FF);;
+    color: floralwhite;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    font-family: 'Quicksand Bold', arial;
+    outline: 0;
+    border: 0;
+    left: 50%;
+    margin-left: -115px;
+    border-radius: 18px;
+    margin-top: -50px;
+    text-align: center;
+}
+.nextbutton button:hover{
+    background-image: linear-gradient(to right, rgb(124, 230, 240),rgb(12, 202, 240));
+    cursor: pointer;
+}
+#text p{
+    color: #0C90D0;
+    top: 50%;
+    margin-left: -70px;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+    font-weight: unset;
+}
+
+header {
+    position: absolute;
+    z-index: 500;
+    align-items: center;
+    display: flex;
+
+}
+
+header h1 {
+    color: #0C90D0;
+    font-weight: 600;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+.footer {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (min-width: 1068px) {
+    #choice {
+        left: 43%;
+    }
+    #buttons {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+    #choice {
+        left: 27%;
+    }
+    #buttons div{
+        margin-top: 50px;
+    }
+    #buttons {
+        flex-direction: column;
+    }
+
+}
