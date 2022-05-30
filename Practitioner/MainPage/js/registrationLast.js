@@ -23,8 +23,7 @@ const handleSubmit = async (e) => {
   const name = document.querySelector("#relatedName").innerText;
   const surname = document.querySelector("#relatedSurname").innerText;
 
-  //TODO check how to get data from those 2 fields, because they're not inputs
-    //   const relatedSelect = document.querySelector("#relatedSelect");
+  
     const select = document.getElementById('relatedSelect')
     const value = select.options[select.selectedIndex].value;
     const gender = document.querySelector('input[name="gender"]:checked').id;
@@ -32,16 +31,19 @@ const handleSubmit = async (e) => {
 
 
     
-    
-    const relatedEmail = document.querySelector("#relatedPEmail").innerText;
+    const relatedName = document.querySelector("#relatedName").innerText;
+    const relatedSurname = document.querySelector("#relatedSurname").innerText;
+    const relatedEmail = document.querySelector("#relatedEmail").innerText;
     const relatedPhone = document.querySelector("#relatedPhone").innerText;
     const organisation = document.querySelector("#organisation")?.innerText;
 
-  const response = await fetch("%URL%", {
-    // ! WRITE URL HERE
+  try {
+    const response = await fetch("http://localhost:8080/api/patients", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": localStorage.getItem('token')
     },
     body: JSON.stringify({
 
@@ -54,28 +56,37 @@ const handleSubmit = async (e) => {
       gender: patient_gender,
       martial: martial,
       language: language,
-      address: address,
-      country: country,
-      city: city,
-      state: state,
-      district: district,
-      postalcode: postalcode,
-      note, //easier syntax, stands for note: note
-      phone,
-      email,
-      passportNumber,
-      relatedEmail,
-      relatedPhone,
-      relatedName,
-      relatedSurname,
-      organisation,
-      relatedSelect,
-      gender,
+      notes: note, 
+      phone_number: phone,
+      email: email,
+      passport_number: passportNumber,
+      type: address,
+      address:{
+        country: country,
+        city: city,
+        state: state,
+        district: district,
+        postalcode: postalcode,
+        
+      },
+      related_person:{
+        email: relatedEmail,
+        phone_number: relatedPhone,
+        first_name: relatedName,
+        last_name: relatedSurname,
+        organization_name: organisation,
+        type: select,
+        gender: gender,
+      },
     }),
   });
   console.log("Response: ", response);
+  } catch (error) {
+    alert('failed to send request, please check the console')
+    console.log(error);
+  }
 };
 
 const finalForm = document.querySelector("#final-form");
 finalForm.addEventListener("submit", handleSubmit);
-
+localStorage.clear();

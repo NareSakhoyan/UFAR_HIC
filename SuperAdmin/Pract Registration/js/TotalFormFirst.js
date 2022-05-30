@@ -33,8 +33,8 @@ const handleSubmit = async (e) => {
     const password = window.localStorage.getItem("Password");
 
     const data = {
-        "username": "nzsdsddssffzz",
-        "email": "zasdzz@msdail.ru",
+        "username": "nzsdsdsddssffzz",
+        "email": "zasdzz@msdaisdl.ru",
         "password": 1234,
         "first_name": "firstName",
         "last_name": "lastName",
@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
             "postal_code": "postalCode"
         },
         "organization": {
-            "name": "organizationNdfgamensdfasdfmenew",
+            "name": "organizationNasddfgamensdfasdfmenew",
             "type": "organizationType",
             "telecom": "organizationTelecom"
         },
@@ -78,6 +78,8 @@ const handleSubmit = async (e) => {
     // HINT: you can use above initialized data to create superadmins,
     // but also changing the endpoint to /api/users/practitioner to create a practitioner,
     // for other endpoints and data ask Abgar, please keep header configrations in each request you make
+
+    try {
     const response = await fetch("http://localhost:8080/api/users/super-admin", {
             method: 'POST',
             body: JSON.stringify(data),
@@ -89,6 +91,11 @@ const handleSubmit = async (e) => {
     })
     const result = await response.json()
     console.log(result)
+    location.assign("/home/dev11/Desktop/UFAR/UFAR_HIC/SuperAdmin/Registration/html/lastRegister.html")
+        
+    } catch (error) {
+        alert('failed to fetch data')
+    }
 };
 const finalForm = document.querySelector("#final-form");
 finalForm.addEventListener("submit", handleSubmit);
