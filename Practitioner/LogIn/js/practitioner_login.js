@@ -17,7 +17,7 @@ async function postInfo() {
     const username = document.querySelector("#uname").innerText;
     const password = document.querySelector("#psw").innerText;
 
-    const response = await fetch("http://localhost:8080/api/users/practitioner", {
+    const response = await fetch("http://localhost:8080/api/users/login", {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -28,8 +28,11 @@ async function postInfo() {
             username, password
         }),
     });
+    const result = await response.json()
     console.log(response.headers.get("Authorisation"));
-    const token = response.headers.get("Authorisation");
+    // const token = response.headers.get("Authorisation");
+    const {access_token: token} = result
+
     localStorage.setItem("token", token);
 
 }

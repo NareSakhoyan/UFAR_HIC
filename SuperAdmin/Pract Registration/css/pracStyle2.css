@@ -208,10 +208,10 @@ main .right .year .yr{
 }
 .out {
     display: flex;
-    margin-top: -20px;
-    margin-left: 560px;
+    margin-top: 590px;
+
 }.backbutton{
-  margin-right: 200px;
+     margin-left: -680px;
   
 }
 .buttons.backbutton input{
