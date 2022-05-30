@@ -2,10 +2,12 @@ async function postInfo() {
     const username = document.querySelector("#username").innerText;
     const password = document.querySelector("#password").innerText;
 
-    const response = await fetch("%URL%", {
+    const response = await fetch("http://localhost:8080/api/users/practitioner", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            cache: 'no-cache',
         },
         body: JSON.stringify({
             username, password
