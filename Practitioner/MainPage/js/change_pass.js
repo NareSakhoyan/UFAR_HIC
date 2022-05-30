@@ -94,14 +94,15 @@ async function postInfo() {
     const token = localStorage.getItem("token")
     const oldpsw = document.querySelector("#oldpsw").innerText;
     const newpass = document.querySelector("#newpass").innerText;
-    const response = await fetch("%URL%", {
-        method: "POST",
+    const response = await fetch("http://localhost:8080/api/users", {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
             "Authorisation": token
         },
         body: JSON.stringify({
-            oldpsw, newpass
+            old_password: oldpsw, 
+            new_password: newpass
         }),
     });
     console.log(response)

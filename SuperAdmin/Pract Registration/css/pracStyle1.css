@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     *{
         margin: 0;
         padding: 0;
@@ -6,7 +6,7 @@
     }
     body{
         background-color: #e7f5fc7a;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
     
     header{
@@ -217,7 +217,7 @@
         border: 0;
         border-radius: 18px;
         left: 20px;
-        margin-left: 600px;
+        margin-left: 350px;
     }
     .nextbutton button:hover{
         background-image: linear-gradient(to right, rgb(124, 230, 240),rgb(12, 202, 240));
@@ -225,10 +225,10 @@
     }
     .out {
         display: flex;
-        margin-top: -25px;
     }
     .backbutton{
-        margin-right: 600px;
+        margin-top: 600px;
+        margin-left: -450px;
     }
     .buttons.backbutton input{
         float: left;
@@ -236,7 +236,10 @@
 }
 
 
-@media only screen and (min-width: 1200px) {
+
+
+
+@media only screen and (max-width: 1200px) {
     *{
         margin: 0;
         padding: 0;
