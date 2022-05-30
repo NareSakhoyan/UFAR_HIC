@@ -21,15 +21,12 @@ const handleSubmit = async (e) => {
 
     try {
         
-    const response = await fetch("%URL%", {
+    const response = await fetch("http://localhost:8080/api/users/super-admin", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            // avatar: {
-            //     url: picture
-            // },
             first_name: name,
             last_name: surname,
             phone_number: PhoneNumber,

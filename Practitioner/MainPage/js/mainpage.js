@@ -67,11 +67,13 @@ $(function practionerData(data){
 
 
 
-// const url = 'http://localhost:8080/api/patients';
+// const url = 'http://localhost:8080/api/patients?page=0&size=7';
 // async function getInfos(){
 //     const token = localStorage.getItem("token")
 //     const response = await fetch(url, { headers: {
-//             "Authorisation": token,
+//             'Accept': 'application/json',
+            // 'Content-Type': 'application/json',
+            // cache: 'no-cache',
 //         },});
 //     const data = await response;
 //     const {first_name, last_name, photo:{url}} = data;
@@ -138,8 +140,11 @@ $(function practionerData(data){
 // search.addEventListener("change", (e) => store("search", e.target.value, false));
 // var tosearch = localStorage.getItem('search');
 // const token = localStorage.getItem("token")
-// const searching = await fetch(url, { headers: {
+// const searching = await fetch("http://localhost:8080/api/patients/firstName55", { headers: {
 //         "Authorisation": token,
+            // 'Accept': 'application/json',
+            // 'Content-Type': 'application/json',
+            // cache: 'no-cache',
 //     },
 //     body: JSON.stringify({
 //         to_search: tosearch,
