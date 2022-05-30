@@ -19,17 +19,17 @@ const handleSubmit = async (e) => {
     const email= window.localStorage.getItem("Email");
     const title = window.localStorage.getItem("Title");
 
-
-
+    try {
+        
     const response = await fetch("%URL%", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            avatar: {
-                url: picture
-            },
+            // avatar: {
+            //     url: picture
+            // },
             first_name: name,
             last_name: surname,
             phone_number: PhoneNumber,
@@ -49,6 +49,12 @@ const handleSubmit = async (e) => {
         }),
     });
     console.log("Response: ", response);
+    location.href("../../../Main/html/tick.html");
+  
+    } catch (error) {
+        alert('failed to fetch data, see console for details')
+        console.log(error)
+    }
 };
 const final = document.querySelector("#final");
 final.addEventListener("submit", handleSubmit);
